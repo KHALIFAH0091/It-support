@@ -1,0 +1,14 @@
+{
+    "name": "khalifah0091/it-support",
+    "description": "IT Support Ticketing System - Streamline issue tracking and resolution for support teams",
+    "type": "project",
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "HESK\\": "src/"
+        }
+    }
+}
