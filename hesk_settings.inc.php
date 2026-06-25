@@ -4,16 +4,16 @@
 // ==> GENERAL
 
 // --> General settings
-$hesk_settings['site_title']='Website';
-$hesk_settings['site_url']='https://www.example.com';
-$hesk_settings['hesk_title']='Help Desk';
-$hesk_settings['hesk_url']='https://www.example.com/helpdesk';
-$hesk_settings['webmaster_mail']='support@example.com';
+$hesk_settings['site_title']='IT Support System';
+$hesk_settings['site_url']='http://localhost';
+$hesk_settings['hesk_title']='IT Support Help Desk';
+$hesk_settings['hesk_url']='http://localhost/helpdesk';
+$hesk_settings['webmaster_mail']='admin@itsupport.local';
 $hesk_settings['site_theme']='hesk3';
 $hesk_settings['admin_css']=0;
-$hesk_settings['admin_css_url']='https://www.example.com/hesk-style.css';
+$hesk_settings['admin_css_url']='http://localhost/hesk-style.css';
 $hesk_settings['admin_js']=0;
-$hesk_settings['admin_js_url']='https://www.example.com/hesk-script.js';
+$hesk_settings['admin_js_url']='http://localhost/hesk-script.js';
 
 // --> Language settings
 $hesk_settings['can_sel_lang']=0;
@@ -24,9 +24,9 @@ $hesk_settings['languages']=array(
 
 // --> Database settings
 $hesk_settings['db_host']='localhost';
-$hesk_settings['db_name']='hesk';
-$hesk_settings['db_user']='test';
-$hesk_settings['db_pass']='test';
+$hesk_settings['db_name']='hesk_db';
+$hesk_settings['db_user']='hesk_user';
+$hesk_settings['db_pass']='secure_password_here';
 $hesk_settings['db_pfix']='hesk_';
 
 
@@ -88,7 +88,7 @@ $hesk_settings['barcode']=array(
 );
 
 // --> Customer Accounts
-$hesk_settings['customer_accounts']=0;
+$hesk_settings['customer_accounts']=1;
 $hesk_settings['customer_accounts_required']=0;
 $hesk_settings['customer_accounts_customer_self_register']=1;
 $hesk_settings['customer_accounts_admin_approvals']=0;
@@ -158,8 +158,8 @@ $hesk_settings['kb_related']=5;
 // ==> EMAIL
 
 // --> Email sending
-$hesk_settings['noreply_mail']='support@example.com';
-$hesk_settings['noreply_name']='Help Desk';
+$hesk_settings['noreply_mail']='noreply@itsupport.local';
+$hesk_settings['noreply_name']='IT Support Help Desk';
 $hesk_settings['email_max_recipients']=50;
 $hesk_settings['email_formatting']=3;
 $hesk_settings['smtp']=0;
@@ -221,7 +221,7 @@ $hesk_settings['pipe_customer_rejection_email_cooldown_hours']=24;
 
 // --> Detect email typos
 $hesk_settings['detect_typos']=1;
-$hesk_settings['email_providers']=array('aim.com','aol.co.uk','aol.com','att.net','bellsouth.net','blueyonder.co.uk','bt.com','btinternet.com','btopenworld.com','charter.net','comcast.net','cox.net','earthlink.net','email.com','facebook.com','fastmail.fm','free.fr','freeserve.co.uk','gmail.com','gmx.at','gmx.ch','gmx.com','gmx.de','gmx.fr','gmx.net','gmx.us','googlemail.com','hotmail.be','hotmail.co.uk','hotmail.com','hotmail.com.ar','hotmail.com.mx','hotmail.de','hotmail.es','hotmail.fr','hushmail.com','icloud.com','inbox.com','laposte.net','lavabit.com','list.ru','live.be','live.co.uk','live.com','live.com.ar','live.com.mx','live.de','live.fr','love.com','lycos.com','mac.com','mail.com','mail.ru','me.com','msn.com','nate.com','naver.com','neuf.fr','ntlworld.com','o2.co.uk','online.de','orange.fr','orange.net','outlook.com','pobox.com','prodigy.net.mx','qq.com','rambler.ru','rocketmail.com','safe-mail.net','sbcglobal.net','t-online.de','talktalk.co.uk','tiscali.co.uk','verizon.net','virgin.net','virginmedia.com','wanadoo.co.uk','wanadoo.fr','yahoo.co.id','yahoo.co.in','yahoo.co.jp','yahoo.co.kr','yahoo.co.uk','yahoo.com','yahoo.com.ar','yahoo.com.mx','yahoo.com.ph','yahoo.com.sg','yahoo.de','yahoo.fr','yandex.com','yandex.ru','ymail.com');
+$hesk_settings['email_providers']=array('aim.com','aol.co.uk','aol.com','att.net','bellsouth.net','blueyonder.co.uk','bt.com','btinternet.com','btopenworld.com','charter.net','comcast.net','cox.net','earthlink.net','gmx.com','hotmail.co.uk','hotmail.com','hotmail.de','hotmail.fr','hotmail.it','hotmail.nl','icloud.com','live.com','live.fr','mail.com','mailinator.com','me.com','msn.com','naver.com','netscape.net','ntlworld.com','orange.fr','outlook.com','posteo.de','protonmail.com','qq.com','rocketmail.com','runbox.com','sina.com','sohu.com','terra.com','terra.es','test.com','tiscali.co.uk','tiscali.it','tutanota.com','virgilio.it','voila.fr','yahoo.be','yahoo.ca','yahoo.co.id','yahoo.co.in','yahoo.co.jp','yahoo.co.kr','yahoo.co.uk','yahoo.com','yahoo.com.ar','yahoo.com.au','yahoo.com.br','yahoo.com.hk','yahoo.com.mx','yahoo.com.sg','yahoo.com.tw','yahoo.com.vn','yahoo.de','yahoo.fr','yahoo.it','yahoo.nl','yahoo.pl','yandex.com','ymail.com','ziggo.nl','zoho.com');
 
 // --> Notify customer when
 $hesk_settings['notify_new']=1;
