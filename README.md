@@ -1,191 +1,112 @@
-# IT Support Ticketing System - Quick Start
+# IT Support Ticketing System
 
-## 🚀 Quick Setup (5 minutes)
+**A complete support ticketing system using GitHub + Supabase**
 
-### 1. Clone Repository
-```bash
-git clone https://github.com/KHALIFAH0091/It-support.git
-cd It-support
-```
+## 🚀 Quick Start
 
-### 2. Run Installation Script
-```bash
-sudo bash install.sh
-```
+### Prerequisites
+- GitHub account (you already have this!)
+- Supabase account (free at https://supabase.com)
 
-### 3. Configure Database
-Edit `hesk_settings.inc.php`:
-```php
-$hesk_settings['db_host']='localhost';
-$hesk_settings['db_name']='hesk_db';
-$hesk_settings['db_user']='hesk_user';
-$hesk_settings['db_pass']='your_secure_password';
-```
+### Setup (5 minutes)
 
-### 4. Create Database
-```sql
-CREATE DATABASE hesk_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE USER 'hesk_user'@'localhost' IDENTIFIED BY 'your_secure_password';
-GRANT ALL PRIVILEGES ON hesk_db.* TO 'hesk_user'@'localhost';
-FLUSH PRIVILEGES;
-```
+1. **Create Supabase Project**
+   - Go to https://supabase.com
+   - Sign up with GitHub
+   - Create new project
 
-### 5. Access Installation Wizard
-Navigate to: `http://yourdomain.com/helpdesk/admin/install/`
+2. **Get API Keys**
+   - Project Settings → API
+   - Copy `Project URL` and `anon key`
+
+3. **Configure App**
+   - Edit `web/config.js`
+   - Replace `YOUR_PROJECT_URL` and `YOUR_ANON_KEY`
+
+4. **Create Database**
+   - Follow instructions in `SUPABASE_SETUP.md`
+
+5. **Deploy**
+   - Enable GitHub Pages (Settings → Pages)
+   - Access: `https://KHALIFAH0091.github.io/It-support/web/`
 
 ## 📋 Features
 
-✅ **Ticket Management** - Create, track, and resolve support tickets
-✅ **Knowledge Base** - Self-service customer support articles
-✅ **Multi-language Support** - Support multiple languages
-✅ **Email Integration** - SMTP, IMAP, POP3 support
-✅ **Customer Accounts** - Optional customer registration
-✅ **Admin Dashboard** - Powerful management interface
-✅ **Security** - Multi-factor authentication support
-✅ **Attachments** - Support for ticket attachments
-✅ **Ratings & Feedback** - Customer satisfaction tracking
-✅ **Barcode Support** - Generate barcodes for tickets
+✅ **Submit Support Tickets** - Easy form to report issues
+✅ **Ticket Tracking** - View all tickets in real-time
+✅ **Status Filtering** - Filter by open/closed status
+✅ **Categories** - Organize tickets by category
+✅ **Auto ID Generation** - Unique ticket IDs
+✅ **Timestamps** - Track when tickets were created
+✅ **Responsive Design** - Works on mobile & desktop
+✅ **No Server Costs** - Free Supabase tier
 
-## 🌐 Access Points
+## 🌐 Architecture
 
-| Function | URL |
-|----------|-----|
-| Customer Portal | `/` |
-| Admin Panel | `/admin/` |
-| Knowledge Base | `/knowledgebase.php` |
-| Submit Ticket | `/submit_ticket.php` |
-| My Tickets | `/my_tickets.php` |
-| Login | `/login.php` |
-| Register | `/register.php` |
+```
+GitHub Pages (Frontend)
+        ↓
+   HTML/CSS/JS
+        ↓
+   Supabase API
+        ↓
+ PostgreSQL Database
+```
 
-## 🔐 Default Security Settings
-
-- SPAM Prevention: Enabled
-- Security Image: Enabled
-- Multi-factor Authentication: Disabled
-- SSL/HTTPS: Disabled (enable for production)
-
-## 📁 Directory Structure
+## 📂 Project Structure
 
 ```
 It-support/
-├── admin/               # Admin panel
-├── attachments/         # Ticket attachments (writable)
-├── cache/              # Cache files (writable)
-├── hesk_settings.inc.php  # Configuration file
-├── index.php           # Customer portal
-├── login.php           # Login page
-├── submit_ticket.php   # Ticket submission
-├── knowledgebase.php   # Knowledge base
-├── autoload.php        # Auto-loader
-├── .htaccess           # Apache configuration
-├── composer.json       # PHP dependencies
-├── install.sh          # Installation script
-├── SETUP_GUIDE.md      # Detailed setup guide
-└── README.md           # This file
-```
+├── web/
+│   ├── index.html       # Main interface
+│   ├── app.js           # Supabase integration
+│   ├── config.js        # API credentials
+│   └── style.css        # Styling
+├── SUPABASE_SETUP.md    # Setup guide
+├── composer.json        # PHP config
+└── README.md            # This file
+```n
+## 🔐 Security
 
-## 🛠️ Customization
+- **Row Level Security** - Only public access to read/insert
+- **CORS Configured** - Your GitHub Pages URL
+- **No Passwords** - Uses Supabase's public anon key
 
-### Change Site Title
-```php
-$hesk_settings['site_title']='Your Company Name';
-$hesk_settings['hesk_title']='Your Help Desk Name';
-```
+## 💰 Cost
 
-### Enable HTTPS
-```php
-$hesk_settings['force_ssl']=1;
-```
+**Free Forever** (for small projects):
+- ✅ Unlimited API calls
+- ✅ Unlimited database rows
+- ✅ 500 MB storage
+- ✅ 2 GB bandwidth/month
 
-### Enable Customer Accounts
-```php
-$hesk_settings['customer_accounts']=1;
-```
+**Paid Plans** (when you scale):
+- $5/month = 10 GB storage + 50 GB bandwidth
+- Pay as you grow
 
-### Configure Email
-```php
-$hesk_settings['smtp']=1;
-$hesk_settings['smtp_host_name']='mail.yourdomain.com';
-$hesk_settings['smtp_host_port']=587;
-$hesk_settings['smtp_user']='your_email@domain.com';
-$hesk_settings['smtp_password']='your_password';
-```
+## 🆘 Support
 
-## 🐛 Troubleshooting
+- **Setup Issues?** Read `SUPABASE_SETUP.md`
+- **Questions?** Check `web/config.js` comments
+- **GitHub Issues**: Report bugs here
 
-### Database Connection Error
-```bash
-# Verify MySQL is running
-sudo systemctl status mysql
+## 📚 Resources
 
-# Test connection
-mysql -h localhost -u hesk_user -p hesk_db
-```
+- [Supabase Docs](https://supabase.com/docs)
+- [GitHub Pages Docs](https://pages.github.com)
+- [REST API Guide](https://supabase.com/docs/guides/api)
 
-### Permission Denied
-```bash
-# Fix permissions
-sudo bash install.sh
+## 🎯 Next Steps
 
-# Or manually:
-sudo chmod 777 attachments
-sudo chmod 777 cache
-```
-
-### White Blank Page
-Enable debug mode:
-```php
-$hesk_settings['debug_mode']=1;
-```
-
-Check Apache error logs:
-```bash
-tail -f /var/log/apache2/error.log
-```
-
-## 📚 Additional Resources
-
-- **Official HESK Website**: https://www.hesk.com/
-- **GitHub Repository**: https://github.com/KHALIFAH0091/It-support
-- **PHP Documentation**: https://www.php.net/
-- **Apache Documentation**: https://httpd.apache.org/
-
-## 📝 License
-
-This project is based on HESK (Help Desk) ticketing system.
-
-## 🤝 Contributing
-
-To contribute to this project:
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## ⚠️ Production Deployment Checklist
-
-- [ ] Enable HTTPS (`$hesk_settings['force_ssl']=1;`)
-- [ ] Disable debug mode (`$hesk_settings['debug_mode']=0;`)
-- [ ] Set strong database password
-- [ ] Configure SMTP for email notifications
-- [ ] Set up regular database backups
-- [ ] Enable automated backups for attachments
-- [ ] Configure firewall rules
-- [ ] Set up SSL certificate
-- [ ] Enable automatic updates (if available)
-- [ ] Configure admin account security
-
-## 📞 Support
-
-For issues and questions:
-1. Check SETUP_GUIDE.md for detailed instructions
-2. Review HESK official documentation
-3. Check GitHub Issues
-4. Open a new issue with detailed information
+1. ✅ Fork/clone this repo
+2. ✅ Create Supabase account
+3. ✅ Follow SUPABASE_SETUP.md
+4. ✅ Update web/config.js
+5. ✅ Enable GitHub Pages
+6. ✅ Share your link!
 
 ---
 
-**Last Updated**: 2026-06-25
-**HESK Version**: 3.7.10
-**Maintained By**: KHALIFAH0091
+**Made with ❤️ using GitHub + Supabase**
+
+*No servers. No databases. No costs. Just pure web magic.* ✨
