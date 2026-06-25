@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Support System - GitHub Based</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🆘 IT Support Ticketing System</h1>
+            <p>GitHub-Based Support Portal</p>
+        </header>
+
+        <main>
+            <!-- Submit Ticket Section -->
+            <section class="submit-section">
+                <h2>Submit a Support Ticket</h2>
+                <form id="ticketForm">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category:</label>
+                        <select id="category" name="category" required>
+                            <option value="">Select a category...</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea id="description" name="description" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Submit Ticket</button>
+                </form>
+            </section>
+
+            <!-- View Tickets Section -->
+            <section class="tickets-section">
+                <h2>Recent Support Tickets</h2>
+                <div id="ticketsContainer" class="tickets-list">
+                    <p>Loading tickets...</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>IT Support System • Powered by GitHub</p>
+            <p><a href="https://github.com/KHALIFAH0091/It-support" target="_blank">View on GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
